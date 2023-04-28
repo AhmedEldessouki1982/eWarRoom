@@ -1,0 +1,72 @@
+@keyframes fillColor {
+    0% {
+        scale: 1;
+    }
+    50%, 100% {
+        scale: 13;
+    }
+}
+
+:root {
+    --color: yellow;
+}
+
+.card__container {
+    font-family: 'Poppins', sans-serif;
+    width: 275px;
+    height: 120px;
+    background-color: rgb(73, 36, 68);
+    border-radius: 9px;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.card__container::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    /* background-color: rgb(44, 93, 227); */
+    background-color: var(--color);
+    position: absolute;
+    border-radius: 50%;
+    top: -30px;
+    right: -20px;
+    overflow: hidden;
+    scale: 1;
+    z-index: -1;
+}
+
+.card__container:hover::after{
+   animation: fillColor 0.75s ease-in normal forwards;
+}
+.card__container:hover h3, 
+.card__container:hover p {
+    color: black;
+    fill: black;
+    transition: all 3s;
+}
+
+.card__container h3 {
+    text-align: center;
+}
+/* date number */
+.card__container p {
+    font-size: 40px;
+    color: rgb(171, 234, 133);
+    text-align: center;
+    margin-top: 5px;
+    display: inline-block;
+
+}
+
+.card__container .icon {
+    display: inline;
+    font-size: 40px;
+    margin-right: 16px;
+    margin-bottom: 25px;
+    margin-left: 20px;
+    fill: rgb(219, 201, 201);
+}
+

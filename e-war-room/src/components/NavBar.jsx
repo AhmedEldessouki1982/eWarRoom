@@ -5,7 +5,6 @@ import menu from '../assets/menu-icon.svg';
 import close from '../assets/close-icon.svg';
 import { useAuth } from '../hooks/useAuth';
 import Nav from '../components/Nav';
-import axios from 'axios';
 
 export default function NavBar({selectedPage, setSelectedPage, pagePosition}) {
 
@@ -39,9 +38,11 @@ export default function NavBar({selectedPage, setSelectedPage, pagePosition}) {
                 <Link onClick={item === "Logout"? logout : () => setSelectedPage(item)} smooth to={`#${item}`} key={i} className='cursor-pointer mx-7'>{item}</Link>
               )
             )
-          
           }
+        
         </div>
+
+        
         
         /*Mobile screen Navbar */
         :
@@ -53,7 +54,7 @@ export default function NavBar({selectedPage, setSelectedPage, pagePosition}) {
                   <img src={menu} alt="menu" />
                 </button>
                 :
-                <button className='absolute z-10 text-black' onClick={() => setMobileMenueOpen(!mobileMenuOpen)}>
+                <button className='absolute z-40' onClick={() => setMobileMenueOpen(!mobileMenuOpen)}>
                   <img src={close} alt="close" />
                 </button>
               
@@ -61,7 +62,7 @@ export default function NavBar({selectedPage, setSelectedPage, pagePosition}) {
             </div>
               { 
                 mobileMenuOpen &&
-                <div className='transition ease-in-out duration-30 flex flex-col absolute w-8/12 h-full bg-red right-0 top-0 text-black text-left p-20'>
+                <div className='z-30 transition ease-in-out duration-30 flex flex-col absolute w-8/12 h-full bg-red right-0 top-0 text-black text-left p-20'>
                   {
                     menuItems.map(
                           (item,i) => (
