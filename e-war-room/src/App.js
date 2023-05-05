@@ -4,6 +4,8 @@ import Layout from './pages/Layout';
 import Dashboard from './pages/Dashboard';
 import NavBar from './components/NavBar';
 import Meeting from './pages/Meeting';
+import Schedule from './pages/Schedule';
+
 
 function App() {
   let [selectedPage, setSelectedPage] = React.useState("Dashboard");
@@ -14,6 +16,8 @@ function App() {
         return (<Dashboard />)
       case "Meeting":
         return (<Meeting />)
+      case "Schedule":
+        return (<Schedule />)
       default:
         break;
     }
@@ -22,7 +26,7 @@ function App() {
   return (
     <div className="app">
      <ProtectRoutes> 
-        <NavBar   selectedPage = {selectedPage} setSelectedPage = {setSelectedPage}/>
+        <NavBar selectedPage = {selectedPage} setSelectedPage = {setSelectedPage}/>
         <Layout>
           <ViewSelectedPage selectedPage = {selectedPage} />
         </Layout> 

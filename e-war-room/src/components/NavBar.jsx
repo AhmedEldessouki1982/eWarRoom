@@ -11,7 +11,7 @@ export default function NavBar({selectedPage, setSelectedPage, pagePosition}) {
   let { logout, cookies } = useAuth();
   let isSmallScreen = useMediaQuery ("(max-width: 1060px)");
   let [mobileMenuOpen, setMobileMenueOpen] = React.useState(false);
-  let menuItems = ["Dashboard", "Meeting", "Notifications", "Logout"];
+  let menuItems = ["Dashboard", "Meeting", "Schedule", "Notifications", "Logout"];
 
   const scrollToTop = () =>{
     window.scrollTo({
