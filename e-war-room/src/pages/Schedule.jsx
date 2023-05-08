@@ -1,16 +1,17 @@
-import React from 'react'
-import ItemCard from '../components/ItemCard'
+import React from 'react';
+import ItemCard from '../components/ItemCard';
 
 function Schedule() {
+
   return (
     <section className='text-white text-center m-10'>
     {/*header section*/}
-        <div className='mb-10 h-10 z-10'>
+        <div className='my-20 h-10 z-10'>
             <span className='text-4xl font-semibold'>The schedule</span>
             <p className='text-dark-grey m-2'>April 27th, 28th, & 29th 2023</p>
         </div>
-    {/*header section*/}
-        <section className='md:flex md:flex-row flex-col justify-between m-10 pt-11'>
+    {/*activities section*/}
+        <section className={`w-full md:flex md:flex-row flex-col justify-between md:m-10 md:pt-11`}>
             <div className='flex-1'>
                 <span className='text-xl font-semibold'>Wednesday 27th</span>
                 <ItemCard/>

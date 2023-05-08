@@ -1,5 +1,6 @@
 import React from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 
 
@@ -50,9 +51,11 @@ const data = [
 
 
 function Charts() {
+  let isSmallScreen = useMediaQuery ("(max-width: 1060px)");
+
   return (
     <div>
-        <LineChart width={630} height={280} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        <LineChart width={isSmallScreen? 430: 630} height={280} data={data} margin={{ top: 5, right: 30, left: isSmallScreen? 0 : 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" tick={{ fill: 'white' }} />
             <YAxis tick={{ fill: 'white' }}/>

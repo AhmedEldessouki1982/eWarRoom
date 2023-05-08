@@ -6,7 +6,7 @@ function DataTables() {
   return (
     <div className="w-full">
     <Table className="w-full">
-        <Thead>
+        <Thead className = "text-yellow">
             <Tr>
                 <Th>Event</Th>
                 <Th>Date</Th>
